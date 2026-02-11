@@ -17,7 +17,7 @@ h3{
 
 }
 .logo {
-    position: relative;
+    position: fixed !important;
     top: -25px;
     left: 0px;
     height: 130px;
@@ -27,10 +27,6 @@ h3{
 }
 .logo:hover {
     transform: scale(1.05);
-}
-body{
-    margin: 10px;
-
 }
 #Ingreso{
     position: relative;
@@ -48,4 +44,49 @@ body{
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 8px 20px rgba(225, 6, 0, 0.3);
+}
+body {
+    overflow-x: hidden;
+    margin: 10;
+
+}
+
+.info-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 40px;
+    width: 400px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.card h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #7a0606;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #3d2e2e;
 }
