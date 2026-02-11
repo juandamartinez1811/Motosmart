@@ -1,0 +1,51 @@
+*{
+    background-color: beige;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    text-align: center;
+    color: #7a0606;
+}
+h3{
+    text-align: center;
+}
+.header {
+    position: fixed;
+    height: 80px;
+
+}
+.logo {
+    position: relative;
+    top: -25px;
+    left: 0px;
+    height: 130px;
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.05);
+}
+body{
+    margin: 10px;
+
+}
+#Ingreso{
+    position: relative;
+    left: 1100px;
+    top: -35px;
+}
+.Botones_Login{
+    background: linear-gradient(135deg, #7a0606, #e10600);
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(225, 6, 0, 0.3);
+}
