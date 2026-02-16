@@ -1,6 +1,129 @@
 *{
-    background-color: beige;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Fondo general */
+body{
+    background-color: beige;
+    overflow-x: hidden;
+}
+
+/* Contenedor principal */
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Tarjeta del registro */
+.card-registro{
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    width: 450px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(122, 6, 6, 0.1);
+}
+
+.card-registro:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+
+/* Títulos */
+.card-registro h1{
+    text-align: center;
+    color: #7a0606;
+    margin-bottom: 10px;
+}
+
+.subtitulo{
+    text-align: center;
+    color: #5c4a4a;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.card-registro h3{
+    text-align: center;
+    margin: 20px 0 15px;
+    color: #7a0606;
+}
+
+/* Grupos de inputs */
+.grupo{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.grupo label{
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #5c4a4a;
+}
+
+.grupo input{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d6bcbc;
+    outline: none;
+    transition: 0.3s;
+}
+
+.grupo input:focus{
+    border-color: #7a0606;
+    box-shadow: 0 0 5px rgba(122, 6, 6, 0.3);
+}
+
+/* Línea divisoria */
+hr{
+    margin: 20px 0;
+    border: none;
+    height: 1px;
+    background-color: #d6bcbc;
+}
+
+/* Botón */
+.btn-registrar{
+    margin-top: 15px;
+    background: linear-gradient(135deg, #7a0606, #e10600);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(225, 6, 0, 0.3);
+}
+
+.btn-registrar:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(225, 6, 0, 0.4);
+}
+
+/* Link login */
+.login-link{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-link a{
+    color: #7a0606;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-link a:hover{
+    text-decoration: underline;
 }

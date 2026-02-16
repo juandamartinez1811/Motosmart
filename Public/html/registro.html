@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gracias por elegirnos</title>
-    <link rel="icon" type="image/x-icon" href="../img/logo.ico">
+    <title>Registro | Gestión de Motos</title>
     <link rel="stylesheet" href="../css/registro.css">
-
 </head>
 <body>
-    
+
+    <div class="contenedor">
+        <div class="card-registro">
+
+            <h1>Crear Cuenta</h1>
+            <p class="subtitulo">Regístrate y gestiona tu motocicleta</p>
+
+            <form id="formRegistro" action="/usuarios" method="POST">
+
+                <div class="grupo">
+                    <label>Nombre completo</label>
+                    <input type="text" name="nombre_usuario" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Fecha de nacimiento</label>
+                    <input type="date" name="fecha_nacimiento" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Cédula</label>
+                    <input type="number" name="cedula" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Placa</label>
+                    <input type="text" name="placa" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Correo electrónico</label>
+                    <input type="email" name="correo" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Contraseña</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+
+                <div class="grupo">
+                    <label>Confirmar contraseña</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+
+                <button type="submit" class="btn-registrar" onclick="window.location.href='html/index.html'">
+                    Registrarme
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <script src="../js/Registro.js"></script>
+
 </body>
 </html>
