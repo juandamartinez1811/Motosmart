@@ -1,42 +1,26 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../db"); // nuestro pool MySQL
+const db = require("../db"); // tu conexión MySQL
 
-router.post("/", async (req, res) => {
-  const { correo, password } = req.body;
+router.post("/", (req, res) => {
+    const { correo, password } = req.body;
 
-  if (!correo || !password) {
-    return res.status(400).json({ error: "Debe enviar correo y contraseña" });
-  }
+    const sql = "SELECT * FROM usuarios WHERE correo = ? AND password = ? LIMIT 1";
 
-  try {
-    // Consulta el usuario en la base de datos
-    const [rows] = await db.query(
-      "SELECT * FROM usuarios WHERE correo = ? LIMIT 1",
-      [correo]
-    );
+    db.query(sql, [correo, password], (err, rows) => {
+        if (err) return res.status(500).json({ error: "Error del servidor" });
+        if (rows.length === 0) return res.status(401).json({ error: "Usuario o contraseña incorrecta" });
 
-    if (rows.length === 0)
-      return res.status(401).json({ error: "Usuario no existe" });
-
-    const usuario = rows[0];
-
-    if (usuario.password !== password)
-      return res.status(401).json({ error: "Contraseña incorrecta" });
-
-    // Login exitoso
-    res.json({
-      success: true,
-      user: {
-        id_usuario: usuario.id_usuario,
-        nombre_usuario: usuario.nombre_usuario,
-        correo: usuario.correo
-      }
+        const usuario = rows[0];
+        res.json({
+            success: true,
+            user: {
+                id_usuario: usuario.id_usuario,
+                nombre_usuario: usuario.nombre_usuario,
+                correo: usuario.correo
+            }
+        });
     });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Error del servidor" });
-  }
 });
 
 module.exports = router;

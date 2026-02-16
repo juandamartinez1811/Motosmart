@@ -24,7 +24,7 @@ const loginRoutes = require("./routes/Login");
 
 app.use("/usuarios", usuariosRoutes);
 app.use("/motos", motosRoutes);
-app.use("/login", loginRoutes);
+app.use("/Login", loginRoutes);
 
 
 // 🔹 Ruta principal
