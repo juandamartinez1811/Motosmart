@@ -1,16 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido motero</title>
+    <title>Bienvenido motero - MotoSmart</title>
     <link rel="icon" type="image/x-icon" href="../img/logo.ico">
     <link rel="stylesheet" href="../css/main.css">
-
 </head>
 <body>
-    <h3>
-"Aquí será para que la persona pueda ver sus datos basicos y recomendaciones de cosas"</h3>
+    <!-- Header -->
+    <header>
+        <h1>Bienvenido, <span id="nombreUsuario">Motero</span></h1>
+        <nav>
+            <button id="btnLogout">Cerrar sesión</button>
+        </nav>
+    </header>
+
+    <!-- Sección de datos básicos -->
+    <section id="datosUsuario">
+        <h2>Mis Datos</h2>
+        <p>Correo: <span id="correoUsuario"></span></p>
+        <p>Cédula: <span id="cedulaUsuario"></span></p>
+        <p>Fecha de nacimiento: <span id="fechaNacimiento"></span></p>
+    </section>
+
+    <!-- Sección de motos -->
+    <section id="misMotos">
+        <h2>Mis Motos</h2>
+        <button id="btnAgregarMoto">Agregar Moto</button>
+        <div id="listaMotos">
+            <!-- Aquí se listarán las motos registradas -->
+        </div>
+    </section>
+
+    <!-- Modal para agregar motos -->
+    <div id="modalMoto" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Registrar Nueva Moto</h3>
+            <form id="formMoto">
+                <input type="text" id="marca" placeholder="Marca" required>
+                <input type="text" id="modelo" placeholder="Modelo" required>
+                <input type="text" id="placa" placeholder="Placa" required>
+                <input type="number" id="anio" placeholder="Año" required>
+                <button type="submit">Agregar Moto</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
 </body>
 </html>
-
