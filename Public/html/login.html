@@ -13,7 +13,8 @@
         <h1>MotoSmart</h1>
         <p class="subtitle">El Garaje Digital</p>
 
-        <form>
+        <!-- Agregamos id="loginForm" -->
+        <form id="loginForm">
             <div class="form-group">
                 <label for="email">Correo Electronico</label>
                 <div class="input-wrapper">
@@ -42,12 +43,16 @@
                 </div>
             </div>
 
+            <!-- Botón submit -->
             <button type="submit" class="btn-submit">
                 <span>Arrancar</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
             </button>
+
+            <!-- Contenedor para mensajes de error/éxito -->
+            <div id="message" style="color:red; margin-top:10px;"></div>
         </form>
 
         <div class="divider"></div>

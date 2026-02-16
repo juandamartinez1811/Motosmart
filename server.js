@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 
+
 const app = express();
 
 // 🔹 Middlewares
@@ -18,9 +19,13 @@ const db = require("./db");
 // 🔹 Rutas
 const usuariosRoutes = require("./routes/usuarios");
 const motosRoutes = require("./routes/motos");
+const loginRoutes = require("./routes/Login");
+
 
 app.use("/usuarios", usuariosRoutes);
 app.use("/motos", motosRoutes);
+app.use("/login", loginRoutes);
+
 
 // 🔹 Ruta principal
 app.get("/", (req, res) => {
